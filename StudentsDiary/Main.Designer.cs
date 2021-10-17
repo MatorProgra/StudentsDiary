@@ -102,8 +102,8 @@ namespace StudentsDiary
 			// CBGroup
 			// 
 			this.CBGroup.FormattingEnabled = true;
-			this.CBGroup.Location = new System.Drawing.Point(332, 22);
-			this.CBGroup.Margin = new System.Windows.Forms.Padding(3, 12, 3, 3);
+			this.CBGroup.Location = new System.Drawing.Point(338, 22);
+			this.CBGroup.Margin = new System.Windows.Forms.Padding(9, 12, 3, 3);
 			this.CBGroup.Name = "CBGroup";
 			this.CBGroup.Size = new System.Drawing.Size(121, 21);
 			this.CBGroup.TabIndex = 4;
