@@ -10,20 +10,32 @@ namespace StudentsDiary
 	{
 		private readonly FileSerializer<List<Student>> _fileSerializer = new FileSerializer<List<Student>>(Environment.ExpandEnvironmentVariables(Settings.Default.PathToFile));
 
-		private readonly List<string> _groups = new List<string>() { "1A", "1B", "2A", "2B", "3A", "3B" };
+		//private readonly List<string> _groups = new List<string>() { "1A", "1B", "2A", "2B", "3A", "3B" };
+		private List<Group> _groups;
 		
 		private Student _student;
 
 		public AddEditStudent()
 		{
 			InitializeComponent();
-			CBGroup.DataSource = _groups;
+
+			//CBGroup.DataSource = _groups;
+			FillGroups();
 		}
 
 		public AddEditStudent(Student student) : this()
 		{
 			_student = student;
 			FillTextBoxes();			
+		}
+
+		private void FillGroups()
+		{
+			_groups = GroupsHelper.GetGroups("Brak");
+
+			CBGroup.DataSource = _groups;
+			CBGroup.DisplayMember = "Name";
+			CBGroup.ValueMember = "Id";
 		}
 
 		private void FillTextBoxes()
@@ -36,7 +48,10 @@ namespace StudentsDiary
 			TBPhysics.Text = _student.Physics;
 			TBPolishLang.Text = _student.PolishLang;
 			TBForeignLang.Text = _student.ForeignLang;
-			CBGroup.SelectedItem = _student.Group;
+
+			//CBGroup.SelectedItem = _student.Group;
+			CBGroup.SelectedItem = _groups.FirstOrDefault(x => x.Id == _student.GroupId);
+
 			RTBComments.Text = _student.Comments;
 			CBActivities.Checked = _student.Activities;
 		}
@@ -50,7 +65,10 @@ namespace StudentsDiary
 			_student.Physics = TBPhysics.Text;
 			_student.PolishLang = TBPolishLang.Text;
 			_student.ForeignLang = TBForeignLang.Text;
-			_student.Group = CBGroup.SelectedItem.ToString();
+
+			//_student.Group = CBGroup.SelectedItem.ToString();
+			_student.GroupId = (CBGroup.SelectedItem as Group).Id;
+
 			_student.Comments = RTBComments.Text;
 			_student.Activities = CBActivities.Checked;
 		}
