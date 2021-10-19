@@ -295,7 +295,7 @@ namespace StudentsDiary
 			this.MaximizeBox = false;
 			this.Name = "AddEditStudent";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-			this.Text = "AddEditStudent";
+			this.Text = "Dodaj studenta";
 			this.ResumeLayout(false);
 			this.PerformLayout();
 

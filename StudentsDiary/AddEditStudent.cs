@@ -26,7 +26,8 @@ namespace StudentsDiary
 		public AddEditStudent(Student student) : this()
 		{
 			_student = student;
-			FillTextBoxes();			
+			FillTextBoxes();
+			Text = "Edytuj dane studenta";
 		}
 
 		private void FillGroups()
