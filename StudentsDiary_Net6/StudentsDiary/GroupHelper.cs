@@ -1,8 +1,6 @@
-﻿using System.Collections.Generic;
-
-namespace StudentsDiary
+﻿namespace StudentsDiary_Net6
 {
-	class GroupsHelper
+	internal static class GroupHelper
 	{
 		public static List<Group> GetGroups(string defaultGroup)
 		{

@@ -1,4 +1,4 @@
-namespace StudentsDiary
+namespace StudentsDiary_Net6
 {
 	internal static class Program
 	{

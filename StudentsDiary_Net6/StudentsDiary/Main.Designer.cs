@@ -1,4 +1,4 @@
-﻿namespace StudentsDiary
+﻿namespace StudentsDiary_Net6
 {
 	partial class Main
 	{
@@ -63,6 +63,7 @@
 			this.btnAdd.TabIndex = 0;
 			this.btnAdd.Text = "Dodaj";
 			this.btnAdd.UseVisualStyleBackColor = false;
+			this.btnAdd.Click += new System.EventHandler(this.AddClick);
 			// 
 			// btnEdit
 			// 
@@ -73,6 +74,7 @@
 			this.btnEdit.TabIndex = 1;
 			this.btnEdit.Text = "Edytuj";
 			this.btnEdit.UseVisualStyleBackColor = false;
+			this.btnEdit.Click += new System.EventHandler(this.EditClick);
 			// 
 			// btnDelete
 			// 
@@ -83,6 +85,7 @@
 			this.btnDelete.TabIndex = 2;
 			this.btnDelete.Text = "Usuń";
 			this.btnDelete.UseVisualStyleBackColor = false;
+			this.btnDelete.Click += new System.EventHandler(this.DeleteClick);
 			// 
 			// btnRefresh
 			// 
@@ -93,6 +96,7 @@
 			this.btnRefresh.TabIndex = 3;
 			this.btnRefresh.Text = "Odśwież";
 			this.btnRefresh.UseVisualStyleBackColor = false;
+			this.btnRefresh.Click += new System.EventHandler(this.RefreshClick);
 			// 
 			// cbGroup
 			// 
@@ -102,6 +106,7 @@
 			this.cbGroup.Name = "cbGroup";
 			this.cbGroup.Size = new System.Drawing.Size(121, 23);
 			this.cbGroup.TabIndex = 4;
+			this.cbGroup.SelectedIndexChanged += new System.EventHandler(this.CbGroup_SelectedIndexChanged);
 			// 
 			// dgvDiary
 			// 
@@ -110,12 +115,14 @@
 			this.dgvDiary.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.dgvDiary.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.dgvDiary.Location = new System.Drawing.Point(0, 66);
+			this.dgvDiary.MultiSelect = false;
 			this.dgvDiary.Name = "dgvDiary";
 			this.dgvDiary.RowHeadersVisible = false;
 			this.dgvDiary.RowTemplate.Height = 25;
 			this.dgvDiary.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
 			this.dgvDiary.Size = new System.Drawing.Size(784, 395);
 			this.dgvDiary.TabIndex = 1;
+			this.dgvDiary.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.CellDoubleClick);
 			// 
 			// Main
 			// 
@@ -126,7 +133,9 @@
 			this.Controls.Add(this.flowLayoutPanel1);
 			this.MinimumSize = new System.Drawing.Size(350, 350);
 			this.Name = "Main";
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "Dziennik ucznia";
+			this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Main_FormClosed);
 			this.flowLayoutPanel1.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.dgvDiary)).EndInit();
 			this.ResumeLayout(false);

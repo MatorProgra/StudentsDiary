@@ -1,4 +1,4 @@
-﻿namespace StudentsDiary
+﻿namespace StudentsDiary_Net6
 {
 	partial class AddEditStudent
 	{
@@ -46,9 +46,9 @@
 			this.label8 = new System.Windows.Forms.Label();
 			this.tbForeignLang = new System.Windows.Forms.TextBox();
 			this.label9 = new System.Windows.Forms.Label();
+			this.cbGroup = new System.Windows.Forms.ComboBox();
 			this.label10 = new System.Windows.Forms.Label();
 			this.rtbComments = new System.Windows.Forms.RichTextBox();
-			this.cbGroup = new System.Windows.Forms.ComboBox();
 			this.cbActivities = new System.Windows.Forms.CheckBox();
 			this.btnConfirm = new System.Windows.Forms.Button();
 			this.btnCancel = new System.Windows.Forms.Button();
@@ -221,6 +221,14 @@
 			this.label9.Text = "Grupa";
 			this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
 			// 
+			// cbGroup
+			// 
+			this.cbGroup.FormattingEnabled = true;
+			this.cbGroup.Location = new System.Drawing.Point(89, 235);
+			this.cbGroup.Name = "cbGroup";
+			this.cbGroup.Size = new System.Drawing.Size(225, 23);
+			this.cbGroup.TabIndex = 20;
+			// 
 			// label10
 			// 
 			this.label10.Location = new System.Drawing.Point(3, 261);
@@ -237,14 +245,6 @@
 			this.rtbComments.Size = new System.Drawing.Size(225, 144);
 			this.rtbComments.TabIndex = 19;
 			this.rtbComments.Text = "";
-			// 
-			// cbGroup
-			// 
-			this.cbGroup.FormattingEnabled = true;
-			this.cbGroup.Location = new System.Drawing.Point(89, 235);
-			this.cbGroup.Name = "cbGroup";
-			this.cbGroup.Size = new System.Drawing.Size(225, 23);
-			this.cbGroup.TabIndex = 20;
 			// 
 			// cbActivities
 			// 
@@ -265,6 +265,7 @@
 			this.btnConfirm.TabIndex = 3;
 			this.btnConfirm.Text = "Zatwierdź";
 			this.btnConfirm.UseVisualStyleBackColor = false;
+			this.btnConfirm.Click += new System.EventHandler(this.ConfirmClick);
 			// 
 			// btnCancel
 			// 
@@ -275,6 +276,7 @@
 			this.btnCancel.TabIndex = 4;
 			this.btnCancel.Text = "Anuluj";
 			this.btnCancel.UseVisualStyleBackColor = false;
+			this.btnCancel.Click += new System.EventHandler(this.CancelClick);
 			// 
 			// AddEditStudent
 			// 
