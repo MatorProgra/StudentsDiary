@@ -119,8 +119,12 @@ namespace StudentsDiary_Net6
 		private void Main_FormClosed(object sender, FormClosedEventArgs e)
 		{
 			Settings.Default.IsMaximize = WindowState == FormWindowState.Maximized;
-			Settings.Default.MainWindowWidth = Width;
-			Settings.Default.MainWindowHeight = Height;
+
+			if (!(WindowState == FormWindowState.Maximized))
+			{
+				Settings.Default.MainWindowWidth = Width;
+				Settings.Default.MainWindowHeight = Height;
+			}
 			Settings.Default.Save();
 		}
 	}
