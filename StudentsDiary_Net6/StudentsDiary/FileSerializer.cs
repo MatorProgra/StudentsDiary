@@ -11,7 +11,7 @@ namespace StudentsDiary_Net6
 		public void SerializeToFile(T item)
 		{
 			var directoryName = Path.GetDirectoryName(_filePath);
-			if (!string.IsNullOrWhiteSpace(directoryName) && !Directory.Exists(directoryName))
+			if (!Directory.Exists(directoryName))
 				Directory.CreateDirectory(directoryName);
 
 			using (var streamWriter = new StreamWriter(_filePath))
